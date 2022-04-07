@@ -1,6 +1,7 @@
 package com.assessment.LockedMe;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -64,7 +65,12 @@ public class Main {
 		System.out.println("2 show File option Menu.");
 		System.out.println("3 Quit.\n");
 		Scanner sc = new Scanner(System.in);
-		return sc.nextInt();
+		try {
+			return sc.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Please input correct value .\n");
+			return menu();
+		}
 	}
 	
 	public int fileOperationMenu() {                        // show menu to add,delete,search a file and return 
@@ -73,7 +79,13 @@ public class Main {
 		System.out.println("3 search a File.");
 		System.out.println("4 Return to Main Menu.\n");
 		Scanner sc = new Scanner(System.in);
-		return sc.nextInt();
+		try {
+			return sc.nextInt();
+		}catch(InputMismatchException e) {
+			System.out.println("Please input correct value .\n");
+			return fileOperationMenu();
+		}
+		
 	}
 	
 	public void show(List<String> list) {    
