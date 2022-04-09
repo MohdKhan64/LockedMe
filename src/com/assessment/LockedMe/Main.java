@@ -18,13 +18,13 @@ public class Main {
 		Files.add("FileOperations.txt");
 		welcome();
 		int option = 0, fileOption = 0;
-		while(true) {
+		while(option != 3) {
 			option = obj.menu();
 			if (option == 1) {
 				obj.show(Files);
 			}
 			else if (option == 2) {
-				while (true) {
+				while (fileOption != 4) {
 					fileOption = obj.fileOperationMenu();
 				    if (fileOption == 1) {
 					    obj.addFile(Files);
@@ -75,7 +75,7 @@ public class Main {
 	
 	public int fileOperationMenu() {                        // show menu to add,delete,search a file and return 
 		System.out.println("1 Add a new File.");
-		System.out.println("2 Delete an existing File.");
+		System.out.println("2 Delete a File.");
 		System.out.println("3 search a File.");
 		System.out.println("4 Return to Main Menu.\n");
 		Scanner sc = new Scanner(System.in);
